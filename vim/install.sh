@@ -37,8 +37,5 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cp ./vim/.vimrc ~/.vimrc
 
-# backup files
-mkdir ~/.vim/{swap,backup,undodir} || true
-
 # install needed plugins
 vim -E -c PluginInstall -c qa! > /dev/null
