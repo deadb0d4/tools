@@ -3,7 +3,7 @@ PROMPT='%n@%m %3~%(!.#.$)%(?.. [%?]) '
 
 autoload -U colors && colors
 
-PS1="%{$fg[red]%}%~ %{$reset_color%}% "
+PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -31,3 +31,13 @@ export GREP_COLORS="mt=33"
 export GREP_OPTIONS='--color=auto'
 
 export GOPATH=$HOME/workspace/gocode
+
+# Node
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/icu4c/lib"
+export CPPFLAGS="-I/usr/local/opt/icu4c/include"
+
+autoload -U +X bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d
