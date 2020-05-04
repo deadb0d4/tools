@@ -27,6 +27,9 @@ setopt complete_in_word         # cd /ho/sco/tm<TAB> expands to /home/scott/tmp
 setopt auto_menu                # show completion menu on succesive tab presses
 setopt autocd                   # cd to a folder just by typing it's name
 
+# Safe removal
+alias rm='rm -i'
+
 export GREP_COLORS="mt=33"
 export GREP_OPTIONS='--color=auto'
 
