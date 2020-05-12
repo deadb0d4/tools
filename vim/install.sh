@@ -12,8 +12,8 @@ install_ctags()
       libyaml-dev \
       libxml2-dev
   
-  git clone https://github.com/universal-ctags/ctags ~/ctags
-  cd ~/ctags
+  git clone https://github.com/universal-ctags/ctags ./ctags
+  cd ./ctags
   
   ./autogen.sh
   ./configure

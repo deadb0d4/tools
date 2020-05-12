@@ -38,7 +38,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
-Plugin 'fxn/vim-monochrome'
+Plugin 'morhetz/gruvbox'
 
 " End of the plugins list.
 call vundle#end()
@@ -64,9 +64,9 @@ set textwidth=80
 set t_Co=256
 syntax on
 
-silent! colorscheme monochrome
+silent! colorscheme gruvbox
 set background=dark
-let g:airline_theme='minimalist'
+let g:airline_theme='gruvbox'
 
 set ruler
 set number
@@ -90,3 +90,17 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
 
 " Search for tags file to the root
 set tags=./tags.txt;/
+
+"Cursor settings:
+
+"  1 -> blinking block
+"  2 -> solid block
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+
