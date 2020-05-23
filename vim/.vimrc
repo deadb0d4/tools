@@ -7,20 +7,14 @@ set backspace=indent,eol,start
 
 filetype plugin on
 
-"" File search part
-
 " Enable search in subfolders
-"
 set path+=**
 
 " Display all matching files:
 "	1. :find and tab between matchings
 "	2. :b [pattern] to switch to previously opened files
-"
 set wildmenu
 
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
 
 "" File browsing
 let g:netrw_altv          = 1
@@ -31,6 +25,7 @@ let g:netrw_retmap        = 1
 let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
 
+"" Plugin via Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -38,13 +33,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
-Plugin 'morhetz/gruvbox'
+Plugin 'joshdick/onedark.vim'
 
-" End of the plugins list.
 call vundle#end()
 
 filetype plugin indent on
-" End of vundle staff
 
 set enc=utf-8
 set fenc=utf-8
@@ -64,9 +57,11 @@ set textwidth=80
 set t_Co=256
 syntax on
 
-silent! colorscheme gruvbox
+silent! colorscheme onedark
 set background=dark
-let g:airline_theme='gruvbox'
+let g:airline_theme='minimalist'
+hi Normal guibg=NONE ctermbg=NONE
+hi Terminal guibg=NONE ctermbg=NONE
 
 set ruler
 set number
@@ -104,3 +99,13 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
+"" Local vim config
+silent! so .vimlocal
+
+"" Handle long lines
+nnoremap <Down> gj
+nnoremap <Up> gk
+vnoremap <Down> gj
+vnoremap <Up> gk
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk

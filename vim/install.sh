@@ -12,7 +12,7 @@ install_ctags()
       libyaml-dev \
       libxml2-dev
   
-  git clone https://github.com/universal-ctags/ctags ./ctags
+  git clone --depth=1 https://github.com/universal-ctags/ctags ./ctags
   cd ./ctags
   
   ./autogen.sh
@@ -33,7 +33,7 @@ while true; do
 done
 
 # clone Vundle package manager
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git clone --depth=1 https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 cp ./vim/.vimrc ~/.vimrc
 
