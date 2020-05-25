@@ -33,6 +33,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'ervandew/supertab'
+Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim'
 Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
@@ -51,8 +53,6 @@ set shiftwidth=2
 
 set expandtab
 set smarttab
-
-set textwidth=80
 
 set t_Co=256
 syntax on
@@ -78,7 +78,10 @@ nnoremap <CR> :noh<CR><CR>
 set ttimeoutlen=0
 
 " Long lines handling
+set wrap
+set nolist
 set linebreak
+set breakindent
 
 " Supertab completion search only the current file
 let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
@@ -99,9 +102,6 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
-"" Local vim config
-silent! so .vimlocal
-
 "" Handle long lines
 nnoremap <Down> gj
 nnoremap <Up> gk
@@ -109,3 +109,6 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+
+"" Local vim config
+silent! so .vimlocal
