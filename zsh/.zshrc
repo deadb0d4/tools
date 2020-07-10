@@ -3,7 +3,7 @@ PROMPT='%n@%m %3~%(!.#.$)%(?.. [%?]) '
 
 autoload -U colors && colors
 
-PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
+PS1="%{$fg[cyan]%}%~ ➜ %{$reset_color%}%"
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -25,7 +25,7 @@ setopt share_history            # Share history among all sessions
 autoload -Uz compinit && compinit
 setopt complete_in_word         # cd /ho/sco/tm<TAB> expands to /home/scott/tmp
 setopt auto_menu                # show completion menu on succesive tab presses
-setopt autocd                   # cd to a folder just by typing it's name
+# setopt autocd                   # cd to a folder just by typing it's name
 
 # Safe removal
 alias rm='rm -i'
@@ -44,3 +44,6 @@ export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 
 autoload -U +X bashcompinit && bashcompinit
 source /usr/local/etc/bash_completion.d
+
+# Python 2.7 is deprecated
+alias python=python3

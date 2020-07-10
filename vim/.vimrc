@@ -35,10 +35,18 @@ Plugin 'morhetz/gruvbox'
 Plugin 'preservim/nerdcommenter'
 Plugin 'dracula/vim'
 Plugin 'joshdick/onedark.vim'
+" s{char_1}{char_2} to start sneak down (S to up)
+Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 
 filetype plugin indent on
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Enable NERDCommenterToggle to check all
+" selected lines is commented or not
+let g:NERDToggleCheckAllLines = 1
 
 set enc=utf-8
 set fenc=utf-8
@@ -59,13 +67,17 @@ set smarttab
 set t_Co=256
 syntax on
 
-" macvim option
-let macvim_skip_colorscheme=1
+" multiple edited buffers (ctrl-6 to switch)
+set hidden
 
 silent! colorscheme onedark
 set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi Terminal guibg=NONE ctermbg=NONE
+
+" Sneak colour
+highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
+highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
 
 set ruler
 set number
@@ -89,8 +101,11 @@ set linebreak
 set breakindent
 
 " convenient insertion
-nnoremap i a
+nnoremap A a
 nnoremap a A
+
+" show at least 4 other lines at the top and the bottom
+set scrolloff=4
 
 nnoremap j gj
 nnoremap k gk
@@ -105,8 +120,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-p>"
 " Search for tags file to the root
 set tags=./tags.txt;/
 
-"Cursor settings:
-
+" Cursor settings:
 "  1 -> blinking block
 "  2 -> solid block
 "  3 -> blinking underscore
@@ -123,4 +137,4 @@ silent! so .vimlocal
 
 " Light the current line up...
 set cursorline
-highlight CursorLine ctermbg=None ctermfg=Yellow
+highlight CursorLine ctermbg=None ctermfg=Cyan
