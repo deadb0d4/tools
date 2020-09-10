@@ -57,6 +57,7 @@ set relativenumber
 
 set autoindent
 set smartindent
+set cindent
 
 set tabstop=2
 set shiftwidth=2
@@ -107,6 +108,7 @@ nnoremap a A
 " show at least 4 other lines at the top and the bottom
 set scrolloff=4
 
+" Iterate through actual lines
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -137,4 +139,8 @@ silent! so .vimlocal
 
 " Light the current line up...
 set cursorline
-highlight CursorLine ctermbg=None ctermfg=Cyan
+highlight CursorLine ctermbg=None ctermfg=white
+
+" Useful mappings
+nnoremap <leader>q <Esc>:xa<CR>
+vnoremap <leader>y :w !pbcopy<CR><CR>

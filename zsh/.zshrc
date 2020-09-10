@@ -3,7 +3,7 @@ PROMPT='%n@%m %3~%(!.#.$)%(?.. [%?]) '
 
 autoload -U colors && colors
 
-PS1="%{$fg[cyan]%}%~ ➜ %{$reset_color%}%"
+PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -47,3 +47,5 @@ source /usr/local/etc/bash_completion.d
 
 # Python 2.7 is deprecated
 alias python=python3
+
+python3 ~/day_count.py
