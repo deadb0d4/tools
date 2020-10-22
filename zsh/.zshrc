@@ -46,6 +46,5 @@ autoload -U +X bashcompinit && bashcompinit
 source /usr/local/etc/bash_completion.d
 
 # Python 2.7 is deprecated
-alias python=python3
-
-python3 ~/day_count.py
+alias python=/usr/bin/python3
+alias pip3=/usr/bin/pip3

@@ -30,13 +30,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
-Plugin 'morhetz/gruvbox'
 " <leader> (which is '\' btw) + c + <space>
 Plugin 'preservim/nerdcommenter'
-Plugin 'dracula/vim'
 Plugin 'joshdick/onedark.vim'
-" s{char_1}{char_2} to start sneak down (S to up)
-Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 
@@ -76,10 +72,6 @@ set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi Terminal guibg=NONE ctermbg=NONE
 
-" Sneak colour
-highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
-highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
-
 set ruler
 set number
 
@@ -88,6 +80,7 @@ set ignorecase
 set smartcase
 
 set hlsearch
+set incsearch
 
 " Drop last search by [Enter]
 nnoremap <CR> :noh<CR><CR>
@@ -102,8 +95,12 @@ set linebreak
 set breakindent
 
 " convenient insertion
-nnoremap A a
 nnoremap a A
+nnoremap A a
+
+" turn off recording
+nnoremap q <Nop>
+vnoremap q <Nop>
 
 " show at least 4 other lines at the top and the bottom
 set scrolloff=4
@@ -141,6 +138,7 @@ silent! so .vimlocal
 set cursorline
 highlight CursorLine ctermbg=None ctermfg=white
 
-" Useful mappings
+" Save all and quit
 nnoremap <leader>q <Esc>:xa<CR>
-vnoremap <leader>y :w !pbcopy<CR><CR>
+" Copy to clipboard
+vnoremap <leader>y "*y<CR>
