@@ -33,6 +33,8 @@ Plugin 'ervandew/supertab'
 " <leader> (which is '\' btw) + c + <space>
 Plugin 'preservim/nerdcommenter'
 Plugin 'joshdick/onedark.vim'
+" s{char_1}{char_2} to start sneak down (S to up)
+Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 
@@ -72,6 +74,10 @@ set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi Terminal guibg=NONE ctermbg=NONE
 
+" Sneak colour
+highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
+highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
+
 set ruler
 set number
 
@@ -81,6 +87,10 @@ set smartcase
 
 set hlsearch
 set incsearch
+
+" Better use leader
+map <leader>s <Plug>Sneak_s
+map <leader>f <Plug>Sneak_S
 
 " Drop last search by [Enter]
 nnoremap <CR> :noh<CR><CR>
