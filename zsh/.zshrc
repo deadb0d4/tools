@@ -33,7 +33,7 @@ alias rm='rm -i'
 export GREP_COLORS="mt=33"
 export GREP_OPTIONS='--color=auto'
 
-export GOPATH=$HOME/workspace/gocode
+export GOPATH=$HOME/workspace/code/go
 
 # Node
 export PATH="/usr/local/opt/icu4c/bin:$PATH"
@@ -45,6 +45,8 @@ export CPPFLAGS="-I/usr/local/opt/icu4c/include"
 autoload -U +X bashcompinit && bashcompinit
 source /usr/local/etc/bash_completion.d
 
-# Python 2.7 is deprecated
-alias python=/usr/bin/python3
-alias pip3=/usr/bin/pip3
+# brew Python 3.9
+export PATH="/Users/ulyumdzhiev/Library/Python/3.9/bin:$PATH"
+
+# Greeting
+echo "$(whoami) @ $(hostname)"
