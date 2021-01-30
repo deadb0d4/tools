@@ -1,6 +1,7 @@
 set nocompatible
 
 syntax enable
+syntax on
 
 " Make backspace great again
 set backspace=indent,eol,start
@@ -13,7 +14,7 @@ set path+=**
 "	2. :b [pattern] to switch to previously opened files
 set wildmenu
 
-"" File browsing
+" File browsing
 let g:netrw_altv          = 1
 let g:netrw_fastbrowse    = 2
 let g:netrw_keepdir       = 0
@@ -64,7 +65,6 @@ set expandtab
 set smarttab
 
 set t_Co=256
-syntax on
 
 " multiple edited buffers (ctrl-6 to switch)
 set hidden
@@ -80,11 +80,9 @@ highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
 
 set ruler
 set number
-
 set showmatch
 set ignorecase
 set smartcase
-
 set hlsearch
 set incsearch
 
@@ -115,7 +113,7 @@ vnoremap q <Nop>
 " show at least 4 other lines at the top and the bottom
 set scrolloff=4
 
-" Iterate through actual lines
+" Iterate through virtual lines
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -136,12 +134,11 @@ set tags=./tags.txt;/
 "  4 -> solid underscore
 "  5 -> blinking vertical bar
 "  6 -> solid vertical bar
-
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
-"" Local vim config
+" Local vim config
 silent! so .vimlocal
 
 " Light the current line up...
@@ -150,5 +147,6 @@ highlight CursorLine ctermbg=None ctermfg=white
 
 " Save all and quit
 nnoremap <leader>q <Esc>:xa<CR>
+
 " Copy to clipboard
 vnoremap <leader>y "*y<CR>
