@@ -1,9 +1,8 @@
 EDITOR=vim
-PROMPT='%n@%m %3~%(!.#.$)%(?.. [%?]) '
 
 autoload -U colors && colors
 
-PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
+PS1="%n @ %{$fg[blue]%}%m %{$reset_color%}% %{$fg[red]%}%~ ➜ %{$reset_color%}%"
 
 # History settings
 HISTFILE=~/.zsh_history
@@ -48,5 +47,5 @@ source /usr/local/etc/bash_completion.d
 # brew Python 3.9
 export PATH="/Users/ulyumdzhiev/Library/Python/3.9/bin:$PATH"
 
-# Greeting
-echo "$(whoami) @ $(hostname)"
+# Homebrew
+export PATH="/usr/local/sbin:$PATH"
