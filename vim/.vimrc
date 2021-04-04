@@ -1,5 +1,18 @@
 set nocompatible
 
+filetype plugin indent on
+
+"" Plugin via Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ervandew/supertab'
+Plugin 'joshdick/onedark.vim'
+Plugin 'justinmk/vim-sneak'
+Plugin 'preservim/nerdcommenter'
+call vundle#end()
+
 syntax enable
 syntax on
 
@@ -23,48 +36,38 @@ let g:netrw_retmap        = 1
 let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
 
-filetype plugin on
-
-"" Plugin via Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'ervandew/supertab'
-" <leader> (which is '\' btw) + c + <space>
-Plugin 'preservim/nerdcommenter'
-Plugin 'joshdick/onedark.vim'
-" s{char_1}{char_2} to start sneak down (S to up)
-Plugin 'justinmk/vim-sneak'
-
-call vundle#end()
-
-filetype plugin indent on
-
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
-" Enable NERDCommenterToggle to check all
-" selected lines is commented or not
+
+" Enable NERDCommenterToggle to check all selected lines are commented
 let g:NERDToggleCheckAllLines = 1
 
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-
-set ttyfast
-set relativenumber
-
 set autoindent
-set smartindent
 set cindent
-
-set tabstop=2
-set shiftwidth=2
-
+set enc=utf-8
 set expandtab
+set fenc=utf-8
+set hlsearch
+set ignorecase
+set incsearch
+set number
+set relativenumber
+set ruler
+set shiftwidth=2
+set showmatch
+set smartcase
+set smartindent
 set smarttab
-
 set t_Co=256
+set tabstop=2
+set termencoding=utf-8
+set ttyfast
+
+" long lines handling
+set wrap
+set nolist
+set linebreak
+set breakindent
 
 " multiple edited buffers (ctrl-6 to switch)
 set hidden
@@ -78,29 +81,8 @@ hi Terminal guibg=NONE ctermbg=NONE
 highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
 highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
 
-set ruler
-set number
-set showmatch
-set ignorecase
-set smartcase
-set hlsearch
-set incsearch
-
-" Better use leader
-map <leader>s <Plug>Sneak_s
-map <leader>f <Plug>Sneak_S
-
-" Drop last search by [Enter]
-nnoremap <CR> :noh<CR><CR>
-
 " Fix the delay from visual to normal
 set ttimeoutlen=0
-
-" Long lines handling
-set wrap
-set nolist
-set linebreak
-set breakindent
 
 " convenient insertion
 nnoremap a A
@@ -150,3 +132,10 @@ nnoremap <leader>q <Esc>:xa<CR>
 
 " Copy to clipboard
 vnoremap <leader>y "*y<CR>
+
+" Use leader for sneak plugin
+map <leader>s <Plug>Sneak_s
+map <leader>f <Plug>Sneak_S
+
+" Drop last search by `Enter`
+nnoremap <CR> :noh<CR><CR>

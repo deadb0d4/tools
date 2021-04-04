@@ -2,7 +2,7 @@ EDITOR=vim
 
 autoload -U colors && colors
 
-PS1="%n @ %{$fg[blue]%}%m %{$reset_color%}% %{$fg[red]%}%~ ➜ %{$reset_color%}%"
+PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
 
 # History settings
 HISTFILE=~/.zsh_history
