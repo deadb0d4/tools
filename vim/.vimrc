@@ -93,7 +93,7 @@ nnoremap q <Nop>
 vnoremap q <Nop>
 
 " show at least 4 other lines at the top and the bottom
-set scrolloff=4
+set scrolloff=2
 
 " Iterate through virtual lines
 nnoremap j gj
