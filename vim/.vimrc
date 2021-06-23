@@ -9,8 +9,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'joshdick/onedark.vim'
+" <leader>{s,f}l_1l_2
 Plugin 'justinmk/vim-sneak'
+" <leader>c{l,<space>}
 Plugin 'preservim/nerdcommenter'
+" <leader>k to colorize a word
+Plugin 'lfv89/vim-interestingwords'
 call vundle#end()
 
 syntax enable
@@ -78,8 +82,8 @@ hi Normal guibg=NONE ctermbg=NONE
 hi Terminal guibg=NONE ctermbg=NONE
 
 " Sneak colour
-highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
-highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
+silent! highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
+silent! highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
 
 " Fix the delay from visual to normal
 set ttimeoutlen=0
@@ -129,6 +133,7 @@ highlight CursorLine ctermbg=None ctermfg=white
 
 " Save all and quit
 nnoremap <leader>q <Esc>:xa<CR>
+nnoremap <leader>x <Esc>:qa!<CR>
 
 " Copy to clipboard
 vnoremap <leader>y "*y<CR>
