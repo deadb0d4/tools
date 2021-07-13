@@ -72,6 +72,7 @@ set wrap
 set nolist
 set linebreak
 set breakindent
+set display+=lastline
 
 " multiple edited buffers (ctrl-6 to switch)
 set hidden
