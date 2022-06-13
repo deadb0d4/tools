@@ -2,12 +2,12 @@ EDITOR=vim
 
 autoload -U colors && colors
 
-PS1="%{$fg[red]%}%~ ➜ %{$reset_color%}%"
+PS1="%{$fg[red]%}%~ ➜%{$reset_color%}%  "
 
-# History settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
+
 setopt append_history           # allow multiple sessions to append to one history
 setopt bang_hist                # treat ! special during command expansion
 setopt extended_history         # Write history in :start:elasped;command format
@@ -24,7 +24,6 @@ setopt share_history            # Share history among all sessions
 autoload -Uz compinit && compinit
 setopt complete_in_word         # cd /ho/sco/tm<TAB> expands to /home/scott/tmp
 setopt auto_menu                # show completion menu on succesive tab presses
-# setopt autocd                   # cd to a folder just by typing it's name
 
 # Safe removal
 alias rm='rm -i'
@@ -32,20 +31,11 @@ alias rm='rm -i'
 export GREP_COLORS="mt=33"
 export GREP_OPTIONS='--color=auto'
 
-export GOPATH=$HOME/workspace/code/go
-
-# Node
-export PATH="/usr/local/opt/icu4c/bin:$PATH"
-export PATH="/usr/local/opt/icu4c/sbin:$PATH"
-
-export LDFLAGS="-L/usr/local/opt/icu4c/lib"
-export CPPFLAGS="-I/usr/local/opt/icu4c/include"
-
-autoload -U +X bashcompinit && bashcompinit
-source /usr/local/etc/bash_completion.d
-
-# brew Python 3.9
-export PATH="/Users/ulyumdzhiev/Library/Python/3.9/bin:$PATH"
-
 # Homebrew
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+
+# my clang 15
+export CC="/usr/local/bin/clang"
+export CXX="/usr/local/bin/clang++"

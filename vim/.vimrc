@@ -9,10 +9,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'joshdick/onedark.vim'
-" <leader>{s,f}l_1l_2
-Plugin 'justinmk/vim-sneak'
-" <leader>c{l,<space>}
+
+" <leader>c<space>
 Plugin 'preservim/nerdcommenter'
+
 " <leader>k to colorize a word
 Plugin 'lfv89/vim-interestingwords'
 call vundle#end()
@@ -82,10 +82,6 @@ set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 hi Terminal guibg=NONE ctermbg=NONE
 
-" Sneak colour
-silent! highlight Sneak guifg=green guibg=None ctermfg=green ctermbg=None
-silent! highlight SneakScope guifg=yellow guibg=None ctermfg=yellow ctermbg=None
-
 " Fix the delay from visual to normal
 set ttimeoutlen=0
 
@@ -139,9 +135,8 @@ nnoremap <leader>x <Esc>:qa!<CR>
 " Copy to clipboard
 vnoremap <leader>y "*y<CR>
 
-" Use leader for sneak plugin
-map <leader>s <Plug>Sneak_s
-map <leader>f <Plug>Sneak_S
-
 " Drop last search by `Enter`
 nnoremap <CR> :noh<CR><CR>
+
+" Align comments
+let g:NERDDefaultAlign = 'left'
