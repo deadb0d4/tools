@@ -140,3 +140,6 @@ nnoremap <CR> :noh<CR><CR>
 
 " Align comments
 let g:NERDDefaultAlign = 'left'
+
+" Scrolling in iterm
+set mouse=nincr

@@ -35,7 +35,3 @@ export GREP_OPTIONS='--color=auto'
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-
-# my clang 15
-export CC="/usr/local/bin/clang"
-export CXX="/usr/local/bin/clang++"
