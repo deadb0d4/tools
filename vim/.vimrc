@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'joshdick/onedark.vim'
+Plugin 'morhetz/gruvbox'
 
 " <leader>c<space>
 Plugin 'preservim/nerdcommenter'
@@ -140,6 +141,3 @@ nnoremap <CR> :noh<CR><CR>
 
 " Align comments
 let g:NERDDefaultAlign = 'left'
-
-" Scrolling in iterm
-set mouse=nincr
